@@ -7,7 +7,9 @@ export async function signIn (email, password) {
     'device_name': 'SPA',
   });
 
-  localStorage.setItem('token', token);
+  if(token){
+      localStorage.setItem('token', token);
+  }
 }
 
 export function signOut () {

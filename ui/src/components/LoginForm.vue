@@ -1,18 +1,16 @@
 <template>
     <form @submit.prevent="onSubmit()">
-      <fieldset>
+      <div class="form-group">
         <label>E-Mail</label>
-        <input v-model="email" type="email">
-      </fieldset>
+        <input v-model="email" type="email" class="form-control">
+      </div>
 
-      <fieldset>
+      <div class="form-group">
         <label>Senha</label>
-        <input v-model="password" type="password">
-      </fieldset>
+        <input v-model="password" type="password" class="form-control">
+      </div>
 
-      <fieldset>
-        <button type="submit">Entrar</button>
-      </fieldset>
+      <button type="submit" class="btn btn-primary">Entrar</button>
     </form>
   </template>
 
@@ -22,7 +20,7 @@
       methods: {
         async onSubmit () {
           await signIn(this.email, this.password);
-          this.$router.push('/home');
+          this.$router.push('/');
         }
       }
     };
