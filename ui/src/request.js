@@ -1,3 +1,5 @@
+import { signOut } from "./auth";
+
 const baseURL = 'http://localhost:8000/api';
 
 function getHeaders () {
@@ -21,6 +23,10 @@ async function request (method, url, body) {
   };
 
   const response = await fetch(baseURL + url, options);
+
+  if (response.status === 401) {
+    signOut();
+  }
 
   return await response.json();
 }
