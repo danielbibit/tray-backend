@@ -32,6 +32,17 @@ services:
     #   - ./api:/usr/src/app
     restart: unless-stopped
 
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    container_name: tray_ui
+    depends_on:
+      - api
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+
 networks:
   tray_dev:
     driver: bridge
