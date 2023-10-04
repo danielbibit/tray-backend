@@ -15,7 +15,7 @@
 - [ ] Permitir que o administrador reenvie o e-mail de comissão a um determinado vendedor;
 
 ## Bônus
-- [ ] Autenticação API
+- [x] Autenticação API
 - [ ] Testes
 - [ ] Implementar remoção e edição do vendedor
 - [x] Implementar validação dos dados enviados

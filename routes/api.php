@@ -20,8 +20,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/seller', [SellerController::class, 'create']);
-Route::get('/seller', [SellerController::class, 'index']);
+Route::post(
+    '/login',
+    [App\Http\Controllers\AuthController::class, 'getToken']
+);
 
-Route::post('/sale', [SaleController::class, 'create']);
-Route::get('/sale', [SaleController::class, 'index']);
+Route::middleware('auth:sanctum')->post('/seller', [SellerController::class, 'create']);
+Route::middleware('auth:sanctum')->get('/seller', [SellerController::class, 'index']);
+
+Route::middleware('auth:sanctum')->post('/sale', [SaleController::class, 'create']);
+Route::middleware('auth:sanctum')->get('/sale', [SaleController::class, 'index']);
