@@ -13,7 +13,7 @@ class SaleSeeder extends Seeder
     public function run(): void
     {
         Sale::factory()
-            ->count(50)
+            ->count(30)
             ->create();
     }
 }

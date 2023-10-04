@@ -22,7 +22,7 @@ class SaleFactory extends Factory
 
         return [
             'price' => $salePrice,
-            'sale_date' => $this->faker->dateTimeBetween('-1 year', 'now'),
+            'sale_date' => $this->faker->dateTimeBetween('-3 days', 'now'),
             'comission' => $comission,
             'seller_id' => Seller::factory(),
         ];
