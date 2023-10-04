@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\SaleController;
+use App\Http\Controllers\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,5 @@ Route::middleware('auth:sanctum')->get('/seller/{id}/sales', [SellerController::
 
 Route::middleware('auth:sanctum')->post('/sale', [SaleController::class, 'create']);
 Route::middleware('auth:sanctum')->get('/sale', [SaleController::class, 'index']);
+
+Route::middleware('auth:sanctum')->get('/report/adminReport', [ReportController::class, 'adminReport']);

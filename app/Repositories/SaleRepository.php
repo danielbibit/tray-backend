@@ -16,4 +16,10 @@ class SaleRepository
     {
         return Sale::all();
     }
+
+    public function getSalesByDate($date)
+    {
+        return Sale::selectRaw('*')->whereDate('sale_date', $date)->get();
+    }
+
 }
