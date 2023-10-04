@@ -39,4 +39,20 @@ class SellerService
     {
         return $this->sellerRespository->getAll();
     }
+
+    public function getById($id)
+    {
+        return $this->sellerRespository->getById($id);
+    }
+
+    public function getSales($id)
+    {
+        $seller = $this->sellerRespository->getById($id);
+
+        if(!$seller) {
+            throw new ErrorException('Seller not found');
+        }
+
+        return $seller->sales;
+    }
 }

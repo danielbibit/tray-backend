@@ -31,4 +31,25 @@ class SellerController extends Controller
     {
         return $this->sellerService->getAll();
     }
+    public function show($id)
+    {
+        try {
+            $seller = $this->sellerService->getById($id);
+
+            return response()->json($seller, 200);
+        } catch (Exception $e) {
+            return response($e->getMessage(), 400);
+        }
+    }
+
+    public function getSales($id)
+    {
+        try {
+            $sales = $this->sellerService->getSales($id);
+
+            return response()->json($sales, 200);
+        } catch (Exception $e) {
+            return response($e->getMessage(), 400);
+        }
+    }
 }

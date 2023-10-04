@@ -27,6 +27,8 @@ Route::post(
 
 Route::middleware('auth:sanctum')->post('/seller', [SellerController::class, 'create']);
 Route::middleware('auth:sanctum')->get('/seller', [SellerController::class, 'index']);
+Route::middleware('auth:sanctum')->get('/seller/{id}', [SellerController::class, 'show']);
+Route::middleware('auth:sanctum')->get('/seller/{id}/sales', [SellerController::class, 'getSales']);
 
 Route::middleware('auth:sanctum')->post('/sale', [SaleController::class, 'create']);
 Route::middleware('auth:sanctum')->get('/sale', [SaleController::class, 'index']);

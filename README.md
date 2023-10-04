@@ -6,7 +6,7 @@
 - [x] Cadastrar venda, vendedor, valor e data;
 - [x] Listar todos os vendedores;
 - [x] Listar todas as vendas;
-- [ ] Listar todas as vendas por vendedor;
+- [x] Listar todas as vendas por vendedor;
 
 ## Aplicação
 - [ ] Interagir com todos endpoints da API;

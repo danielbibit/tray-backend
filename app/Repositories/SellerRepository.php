@@ -16,4 +16,9 @@ class SellerRepository
     {
         return Seller::all();
     }
+
+    public function getById($id)
+    {
+        return Seller::find($id);
+    }
 }
