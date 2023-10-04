@@ -3,6 +3,7 @@ namespace App\Services;
 
 use App\Models\Sale;
 use App\Repositories\SaleRepository;
+use App\Repositories\SellerRepository;
 use ErrorException;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
@@ -11,7 +12,9 @@ class ReportService
 {
 
     public function __construct(
-        private SaleRepository $saleRepository)
+        private SaleRepository $saleRepository,
+        private SellerRepository $sellerRepository
+    )
     {
     }
 
@@ -33,6 +36,33 @@ class ReportService
         ];
 
         return $data;
+    }
+
+    public function sellerReportData($seller_id, $date)
+    {
+        $seller = $this->sellerRepository->getById($seller_id);
+
+        $sales = $seller->sales()->whereDate('sale_date', $date)->get();
+
+        Log::debug($sales);
+
+        $reportData = [
+            "seller_name" => $seller['name'],
+            "seller_email" => $seller['email'],
+            "number_of_sales" => 0,
+            "total_sales" => 0.0,
+            "total_comission" => 0.0,
+        ];
+
+        foreach($sales as &$sale) {
+            $reportData['number_of_sales'] += 1;
+            $reportData['total_sales'] += $sale['price'];
+            $reportData['total_comission'] += $sale['comission'];
+        }
+
+        Log::debug($reportData);
+
+        return $reportData;
     }
 
 }

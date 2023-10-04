@@ -35,3 +35,4 @@ Route::middleware('auth:sanctum')->post('/sale', [SaleController::class, 'create
 Route::middleware('auth:sanctum')->get('/sale', [SaleController::class, 'index']);
 
 Route::middleware('auth:sanctum')->get('/report/adminReport', [ReportController::class, 'adminReport']);
+Route::middleware('auth:sanctum')->get('/report/sellerReport', [ReportController::class, 'sellerReport']);

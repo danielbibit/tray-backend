@@ -19,4 +19,9 @@ class ReportController extends Controller
     {
         return $this->reportService->adminReportData(date('Y-m-d'));
     }
+
+    public function sellerReport(Request $request)
+    {
+        return $this->reportService->sellerReportData($request['seller_id'], date('Y-m-d'));
+    }
 }
