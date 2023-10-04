@@ -1,9 +1,9 @@
 <template>
   <header>
-    <div class="wrapper">
+    <div class="navbar">
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/sellers">Sellers</RouterLink>
       </nav>
     </div>
   </header>

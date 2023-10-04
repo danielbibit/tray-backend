@@ -1,12 +1,11 @@
 <script setup>
 import Header from '../components/Header.vue';
+import SellersList from '../components/SellersList.vue';
 </script>
 
 <template>
-  <Header></Header>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <Header />
+  <SellersList />
 </template>
 
 <style>

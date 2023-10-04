@@ -18,12 +18,12 @@ const router = createRouter({
       }
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/sellers',
+      name: 'sellers',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
+      component: () => import('../views/SellersView.vue'),
       beforeEnter: (_, __, next) => {
         if(isSignedIn()) {
           next();
