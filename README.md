@@ -2,10 +2,10 @@
 
 # Objetivos
 ## API
-- [ ] Cadastrar vendedores informando nome e e-mail;
-- [ ] Cadastrar venda, vendedor, valor e data;
-- [ ] Listar todos os vendedores;
-- [ ] Listar todas as vendas;
+- [x] Cadastrar vendedores informando nome e e-mail;
+- [x] Cadastrar venda, vendedor, valor e data;
+- [x] Listar todos os vendedores;
+- [x] Listar todas as vendas;
 - [ ] Listar todas as vendas por vendedor;
 
 ## Aplicação
@@ -18,4 +18,4 @@
 - [ ] Autenticação API
 - [ ] Testes
 - [ ] Implementar remoção e edição do vendedor
-- [ ] Implementar validação dos dados enviados
+- [x] Implementar validação dos dados enviados

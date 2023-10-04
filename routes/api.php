@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SellerController;
+use App\Http\Controllers\SaleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/seller', [SellerController::class, 'create']);
 Route::get('/seller', [SellerController::class, 'index']);
+
+Route::post('/sale', [SaleController::class, 'create']);
+Route::get('/sale', [SaleController::class, 'index']);
