@@ -11,7 +11,7 @@
 ## Aplicação
 - [ ] Interagir com todos endpoints da API;
 - [ ] Enviar um e-mail para o vendedor ao final de cada dia.
-- [ ] Enviar um e-mail para o administrador do sistema contendo a soma de todas as vendas
+- [x] Enviar um e-mail para o administrador do sistema contendo a soma de todas as vendas
 - [ ] Permitir que o administrador reenvie o e-mail de comissão a um determinado vendedor;
 
 ## Bônus

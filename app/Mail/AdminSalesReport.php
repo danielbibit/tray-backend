@@ -16,9 +16,10 @@ class AdminSalesReport extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(
+        public $adminReportData
+    )
     {
-        //
     }
 
     /**
@@ -27,7 +28,7 @@ class AdminSalesReport extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Test',
+            subject: 'Relatório de vendas',
         );
     }
 
@@ -37,8 +38,7 @@ class AdminSalesReport extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'test',
-            // text: 'asdfads'
+            view: 'admin_sales_report',
         );
     }
 
