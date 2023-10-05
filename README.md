@@ -97,3 +97,18 @@ Os seguintes itens foram propostos:
 - [ ] Testes
 - [ ] Implementar remoção e edição do vendedor
 - [x] Implementar validação dos dados enviados
+
+# Notas de desenvolvimento
+- Foi escolhido utilizar apenas um repositório para tanto para a API Laravel,
+quanto para a SPA feita em VueJS.
+Isso foi feito para facilitar a criação o ambiente de desenvolvimento.
+Todos os commits feitos na SPA foram prefixados com **"ui: "** para facilitar a identificação.
+- Não foi feito o uso de feature branches, por se tratar de de uma primeira versão,
+e ter apenas um desenvolvedor.
+- As imagens docker foram criadas pensando apenas para o ambiente de desenvolvimento.
+Não sendo adequadas para ambientes de produção.
+- Foi dada preferência para o uso de ferramentas e técnicas padrões do Laravel,
+a fim e facilitar o desenvolvimento e manutenção do projeto.
+- Com finalidade de desacoplar a aplicação do framework,
+foi utilizado o padrão de repositórios para acesso aos dados,
+e também a criação de uma camada de serviço para a lógica de negócio e validação.
