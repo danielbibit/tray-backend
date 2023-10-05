@@ -2,8 +2,8 @@
 
 # Aplicação online
 A aplicação está disponível online, e pode ser acessada através dos links abaixo.
-- UI - http://ui.tray.moraes.dev.br:5173
-- API - http://api.tray.moraes.dev.br:8000
+- UI - https://ui.tray.moraes.dev.br:42443
+- API - https://api.tray.moraes.dev.br:42443
 
 Login: admin@test.com
 Senha: adminadmin
