@@ -13,8 +13,6 @@ services:
       - tray_dev
     ports:
       - 3306:3306
-    # volumes:
-    #   - ./mysql:/var/lib/mysql
     restart: unless-stopped
 
   api:
@@ -26,10 +24,8 @@ services:
       - mysql
     networks:
       - tray_dev
-    # ports:
-    #   - 3000:3000
-    # volumes:
-    #   - ./api:/usr/src/app
+    ports:
+      - 8000:8000
     restart: unless-stopped
 
   ui:
@@ -37,10 +33,13 @@ services:
       context: ./ui
       dockerfile: Dockerfile
     container_name: tray_ui
+    networks:
+      - tray_dev
     depends_on:
       - api
     ports:
-      - 8080:8080
+      - 5173:5173
+
     restart: unless-stopped
 
 networks:
