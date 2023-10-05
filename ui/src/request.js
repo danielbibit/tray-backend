@@ -22,6 +22,7 @@ async function request(method, url, body) {
     })
   }
 
+  console.log(options)
   const response = await fetch(baseURL + url, options)
 
   if (response.status === 401) {

@@ -12,7 +12,7 @@
 - [x] Interagir com todos endpoints da API;
 - [x] Enviar um e-mail para o vendedor ao final de cada dia.
 - [x] Enviar um e-mail para o administrador do sistema contendo a soma de todas as vendas
-- [ ] Permitir que o administrador reenvie o e-mail de comissão a um determinado vendedor;
+- [x] Permitir que o administrador reenvie o e-mail de comissão a um determinado vendedor;
 
 ## Bônus
 - [x] Autenticação API

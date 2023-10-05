@@ -1,9 +1,20 @@
 <script setup>
 import { getAllSellers } from '../services/sellerService'
+import { sendSellerReport } from '../services/reportsService';
 </script>
 
 <script>
 let sellers = await getAllSellers()
+
+export default {
+  methods: {
+    async sendReport(seller_id) {
+      sendSellerReport(seller_id);
+
+      // this.$router.push('/sellers');
+    }
+  }
+}
 </script>
 
 <template>
@@ -29,7 +40,7 @@ let sellers = await getAllSellers()
               'sellerId': seller.id,
               'sellerName': seller.name
             }})">Nova Venda</button>
-          <button class="btn btn-warning">Enviar Relatório</button>
+          <button class="btn btn-warning" @click.prevent="sendReport(seller.id)" >Enviar Relatório</button>
         </td>
       </tr>
     </tbody>
