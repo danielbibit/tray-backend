@@ -5,7 +5,10 @@ import SalesList from '../components/SalesList.vue'
 
 <template>
   <Header />
-  <SalesList />
+
+  <div class="container">
+    <SalesList />
+  </div>
 </template>
 
 <style></style>

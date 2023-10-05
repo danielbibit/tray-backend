@@ -5,6 +5,8 @@ import SalesEditor from '../components/SalesEditor.vue'
 
 <template>
   <Header />
-  <SalesEditor />
+  <div class="container">
+    <SalesEditor />
+  </div>
 </template>
 

@@ -7,8 +7,10 @@ import SellersList from '../components/SellersList.vue'
 
 <template>
   <Header />
-  <button class="btn btn-primary" @click="$router.push('createSeller')">Novo Vendedor</button>
-  <SellersList />
+  <div class="container">
+    <button class="btn btn-primary" @click="$router.push('createSeller')">Novo Vendedor</button>
+    <SellersList />
+  </div>
 </template>
 
 <style></style>

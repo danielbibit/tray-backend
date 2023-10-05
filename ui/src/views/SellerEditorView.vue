@@ -5,5 +5,7 @@ import SellerEditor from '../components/SellerEditor.vue'
 
 <template>
   <Header />
-  <SellerEditor />
+  <div class="container">
+    <SellerEditor />
+  </div>
 </template>

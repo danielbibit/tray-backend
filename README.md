@@ -54,6 +54,15 @@ docker exec -it tray_api /bin/bash
 docker exec -it tray_ui /bin/sh
 ```
 
+Uma vez dentro do container, você pode executar os comandos abaixo para executar as aplicações.
+```sh
+# Executa a api
+php artisan serve --host=0.0.0.0 --port=8000
+
+# Executa a ui
+npm run dev
+```
+
 ## Setup laravel e migrations
 A primeira vez que subir a aplicação, é necessário gerar a chave da aplicação,
 e rodar as migrations.
