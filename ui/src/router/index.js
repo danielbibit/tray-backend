@@ -75,7 +75,7 @@ const router = createRouter({
       component: () => import('../components/LoginForm.vue'),
       beforeEnter: (_, __, next) => {
         signOut()
-        next('/')
+        next('/login')
       }
     }
   ]
