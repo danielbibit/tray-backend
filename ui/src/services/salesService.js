@@ -5,11 +5,16 @@ export async function getAllSales() {
 }
 
 export async function createSale(seller_id, price) {
-  // console.log(new Date().parse('Y-m-d'))
+  const year = new Date().getFullYear()
+  const month = new Date().getMonth() + 1
+  const day = new Date().getDate()
+
+  const date_string = year + '-' + month + '-' + day;
+
   const request_body = {
     "seller_id": seller_id,
     "price": Number(price).toFixed(2),
-    "sale_date": "2023-10-05"
+    "sale_date": date_string
   }
 
   return await request('POST', '/sale', request_body)
