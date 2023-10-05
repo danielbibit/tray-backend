@@ -63,7 +63,8 @@ const router = createRouter({
           return
         }
         next('/login')
-      }
+      },
+      props: true
     },
     {
       path: '/login',
