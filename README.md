@@ -103,6 +103,41 @@ Os seguintes itens foram propostos:
 - [ ] Implementar remoção e edição do vendedor
 - [x] Implementar validação dos dados enviados
 
+# Documentação API
+
+## /login (POST)
+Endpoint para gerar o token de autenticação.
+Todas a chamadas para a API devem possuir um token do tipo *Bearer* no header *Authorization*
+
+### Request Body
+```json
+{
+    "email": "admin@test.com",
+    "password": "adminadmin",
+    "device_name": "SPA"
+}
+```
+
+### Response
+```json
+{
+    "token": "TOKEN_STRING_EXAMPLE"
+}
+```
+
+## Endpoints disponíveis
+- /seller (POST)
+- /seller (GET)
+- /seler/{id} (GET)
+- /seler/{id}/sales (GET)
+
+- /sale (POST)
+- /sale (GET)
+
+- /report/adminReport (POST)
+- /report/sellerReport (POST)
+
+
 # Notas de desenvolvimento
 - Foi escolhido utilizar apenas um repositório para tanto para a API Laravel,
 quanto para a SPA feita em VueJS.
@@ -110,10 +145,12 @@ Isso foi feito para facilitar a criação o ambiente de desenvolvimento.
 Todos os commits feitos na SPA foram prefixados com **"ui: "** para facilitar a identificação.
 - Não foi feito o uso de feature branches, por se tratar de de uma primeira versão,
 e ter apenas um desenvolvedor.
+- Apenas os métodos necessários para satisfazer os requesitos foram implementados.
 - As imagens docker foram criadas pensando apenas para o ambiente de desenvolvimento.
 Não sendo adequadas para ambientes de produção.
 - Foi dada preferência para o uso de ferramentas e técnicas padrões do Laravel,
 a fim e facilitar o desenvolvimento e manutenção do projeto.
 - Com finalidade de desacoplar a aplicação do framework,
 foi utilizado o padrão de repositórios para acesso aos dados,
-e também a criação de uma camada de serviço para a lógica de negócio e validação.
+e também a criação de uma camada de serviço para as regras negócio e validação.
+- É necessário documentar os endpoints da API.
