@@ -63,6 +63,11 @@ php artisan serve --host=0.0.0.0 --port=8000
 npm run dev
 ```
 
+Para executar os testes
+```sh
+php artisan test
+```
+
 ## Setup laravel e migrations
 A primeira vez que subir a aplicação, é necessário gerar a chave da aplicação,
 e rodar as migrations.
@@ -94,7 +99,7 @@ Os seguintes itens foram propostos:
 
 ## Bônus
 - [x] Autenticação API
-- [ ] Testes
+- [x] Testes (Apenas unit tests para services)
 - [ ] Implementar remoção e edição do vendedor
 - [x] Implementar validação dos dados enviados
 

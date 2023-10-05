@@ -2,13 +2,10 @@
 
 namespace Tests\Unit;
 
-// use PHPUnit\Framework\TestCase;
 use Tests\TestCase;
 use App\Services\SellerService;
 use App\Repositories\SellerRepository;
 use App\Models\Seller;
-use Mockery;
-use Mockery\MockInterface;
 
 class SellerServiceTest extends TestCase
 {
