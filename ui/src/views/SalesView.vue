@@ -1,6 +1,6 @@
 <script setup>
-import Header from '../components/Header.vue';
-import SalesList from '../components/SalesList.vue';
+import Header from '../components/Header.vue'
+import SalesList from '../components/SalesList.vue'
 </script>
 
 <template>
@@ -8,6 +8,4 @@ import SalesList from '../components/SalesList.vue';
   <SalesList />
 </template>
 
-<style>
-
-</style>
+<style></style>
