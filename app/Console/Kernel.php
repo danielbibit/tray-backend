@@ -43,8 +43,7 @@ class Kernel extends ConsoleKernel
         $schedule->call(function() {
             Log::debug('Admin report schedule called');
 
-            // TODO use yesterdays date
-            $reportData = $this->reportService->adminReportData(date('Y-m-d'));
+            $reportData = $this->reportService->adminReportData(date('Y-m-d', strtotime('yesterday')));
 
             Mail::to(env('ADMIN_EMAIL'))->send(new AdminSalesReport($reportData));
         })->dailyAt('00:01');
@@ -56,13 +55,12 @@ class Kernel extends ConsoleKernel
             $sellers = $this->sellerRepository->getAll();
 
             foreach($sellers as &$seller) {
-                $reportData = $this->reportService->sellerReportData($seller['id'], date('Y-m-d'));
+                $reportData = $this->reportService->sellerReportData($seller['id'], date('Y-m-d', strtotime('yesterday')));
 
                 Log::debug($reportData);
 
                 Mail::to($seller['email'])->send(new SellerSalesReport($reportData));
             }
-
 
             Log::debug($sellers);
 
