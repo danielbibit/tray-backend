@@ -1,10 +1,10 @@
 <script setup>
-  import { getAllSellers } from '../services/sellerService';
+import { getAllSellers } from '../services/sellerService'
 </script>
 
 <script>
-  let sellers = await getAllSellers();
-  console.log(sellers);
+let sellers = await getAllSellers()
+console.log(sellers)
 </script>
 
 <template>
@@ -12,8 +12,9 @@
     <thead>
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">Name</th>
+        <th scope="col">Nome</th>
         <th scope="col">Email</th>
+        <th scope="col">Editar</th>
       </tr>
     </thead>
 
@@ -22,6 +23,7 @@
         <td>{{ seller.id }}</td>
         <td>{{ seller.name }}</td>
         <td>{{ seller.email }}</td>
+        <td><button class="btn btn-secondary">Editar</button></td>
       </tr>
     </tbody>
   </table>

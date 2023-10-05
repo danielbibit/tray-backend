@@ -10,9 +10,9 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
       beforeEnter: (_, __, next) => {
-        if(isSignedIn()) {
-          next();
-          return;
+        if (isSignedIn()) {
+          next()
+          return
         }
         next('/login')
       }
@@ -22,9 +22,21 @@ const router = createRouter({
       name: 'sellers',
       component: () => import('../views/SellersView.vue'),
       beforeEnter: (_, __, next) => {
-        if(isSignedIn()) {
-          next();
-          return;
+        if (isSignedIn()) {
+          next()
+          return
+        }
+        next('/login')
+      }
+    },
+    {
+      path: '/createSeller',
+      name: 'createSeller',
+      component: () => import('../views/SellerEditorView.vue'),
+      beforeEnter: (_, __, next) => {
+        if (isSignedIn()) {
+          next()
+          return
         }
         next('/login')
       }
@@ -34,9 +46,9 @@ const router = createRouter({
       name: 'sales',
       component: () => import('../views/SalesView.vue'),
       beforeEnter: (_, __, next) => {
-        if(isSignedIn()) {
-          next();
-          return;
+        if (isSignedIn()) {
+          next()
+          return
         }
         next('/login')
       }
