@@ -47,9 +47,7 @@ class Kernel extends ConsoleKernel
             $reportData = $this->reportService->adminReportData(date('Y-m-d'));
 
             Mail::to(env('ADMIN_EMAIL'))->send(new AdminSalesReport($reportData));
-        // })->dailyAt('00:01');
-        // })->everyMinute();
-        })->yearly();
+        })->dailyAt('00:01');
 
         //Daily seller sales report
         $schedule->call(function() {
@@ -68,7 +66,7 @@ class Kernel extends ConsoleKernel
 
             Log::debug($sellers);
 
-        })->everyMinute();
+        })->dailyAt('00:01');
     }
 
     /**

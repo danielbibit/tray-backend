@@ -1,12 +1,14 @@
 <?php
 namespace App\Services;
 
+use App\Mail\SellerSalesReport;
 use App\Models\Sale;
 use App\Repositories\SaleRepository;
 use App\Repositories\SellerRepository;
 use ErrorException;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class ReportService
 {
@@ -63,6 +65,11 @@ class ReportService
         Log::debug($reportData);
 
         return $reportData;
+    }
+
+    public function sendSellerReport($sellerReportData)
+    {
+        Mail::to($sellerReportData['seller_email'])->send(new SellerSalesReport($sellerReportData));
     }
 
 }
