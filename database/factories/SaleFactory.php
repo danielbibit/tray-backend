@@ -18,7 +18,7 @@ class SaleFactory extends Factory
     public function definition(): array
     {
         $salePrice = $this->faker->randomFloat(2, 10, 1000);
-        $comission = $salePrice * env('COMISSION_PERCENTAGE');
+        $comission = $salePrice * config('app.comission_percentage');
 
         return [
             'price' => $salePrice,

@@ -185,4 +185,12 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+    /*
+    |--------------------------------------------------------------------------
+    |  App Specific Settings
+    |--------------------------------------------------------------------------
+    */
+    'admin_email' => env('ADMIN_EMAIL'),
+
+    'comission_percentage' => env('COMISSION_PERCENTAGE', 0.085),
 ];

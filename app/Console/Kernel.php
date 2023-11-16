@@ -45,7 +45,7 @@ class Kernel extends ConsoleKernel
 
             $reportData = $this->reportService->adminReportData(date('Y-m-d', strtotime('yesterday')));
 
-            Mail::to(env('ADMIN_EMAIL'))->send(new AdminSalesReport($reportData));
+            Mail::to(config('app.admin_email'))->send(new AdminSalesReport($reportData));
         })->dailyAt('00:01');
 
         //Daily seller sales report

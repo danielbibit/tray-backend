@@ -36,7 +36,7 @@ class SaleService
         }
 
         // Calculate comission
-        $data['comission'] = $data['price'] * env('COMISSION_PERCENTAGE');
+        $data['comission'] = $data['price'] * config('app.comission_percentage');
 
         return $this->saleRepository->create($data);
     }
