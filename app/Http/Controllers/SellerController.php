@@ -31,6 +31,7 @@ class SellerController extends Controller
     {
         return $this->sellerService->getAll();
     }
+
     public function show($id)
     {
         try {

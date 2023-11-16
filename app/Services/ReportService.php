@@ -6,6 +6,7 @@ use App\Models\Sale;
 use App\Repositories\SaleRepository;
 use App\Repositories\SellerRepository;
 use ErrorException;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
@@ -20,7 +21,7 @@ class ReportService
     {
     }
 
-    public function adminReportData($date)
+    public function adminReportData(string $date): array
     {
         $sales = $this->saleRepository->getSalesByDate($date);
 
@@ -40,7 +41,7 @@ class ReportService
         return $data;
     }
 
-    public function sellerReportData($seller_id, $date)
+    public function sellerReportData(int $seller_id, string$date): array
     {
         $seller = $this->sellerRepository->getById($seller_id);
 
@@ -67,7 +68,7 @@ class ReportService
         return $reportData;
     }
 
-    public function sendSellerReport($sellerReportData)
+    public function sendSellerReport(array $sellerReportData): void
     {
         Mail::to($sellerReportData['seller_email'])->send(new SellerSalesReport($sellerReportData));
     }

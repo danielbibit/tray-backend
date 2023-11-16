@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\SaleService;
 use Exception;
+use Illuminate\Http\JsonResponse;
 
 class SaleController extends Controller
 {
@@ -15,7 +16,7 @@ class SaleController extends Controller
 
     }
 
-    public function create(Request $request)
+    public function create(Request $request): JsonResponse
     {
         try {
             $sale = $this->saleService->create($request->toArray());
@@ -26,7 +27,7 @@ class SaleController extends Controller
         }
     }
 
-    public function index()
+    public function index(): JsonResponse
     {
         $sales = $this->saleService->getAll();
 

@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\Sale;
 use App\Repositories\SaleRepository;
 use ErrorException;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
 
@@ -41,7 +42,7 @@ class SaleService
         return $this->saleRepository->create($data);
     }
 
-    public function getAll()
+    public function getAll() : Collection
     {
         return $this->saleRepository->getAll();
     }

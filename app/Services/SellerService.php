@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\Seller;
 use App\Repositories\SellerRepository;
 use ErrorException;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
 
@@ -35,17 +36,17 @@ class SellerService
         return $this->sellerRespository->create($data);
     }
 
-    public function getAll()
+    public function getAll() : Collection
     {
         return $this->sellerRespository->getAll();
     }
 
-    public function getById($id)
+    public function getById(int $id) : Collection
     {
         return $this->sellerRespository->getById($id);
     }
 
-    public function getSales($id)
+    public function getSales(int $id) : Collection
     {
         $seller = $this->sellerRespository->getById($id);
 

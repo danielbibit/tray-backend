@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Seller;
+use Illuminate\Database\Eloquent\Collection;
 
 class SellerRepository
 {
@@ -12,12 +13,12 @@ class SellerRepository
     }
 
 
-    public function getAll()
+    public function getAll() : Collection
     {
         return Seller::all();
     }
 
-    public function getById($id)
+    public function getById($id) : Collection
     {
         return Seller::find($id);
     }

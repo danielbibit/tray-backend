@@ -15,12 +15,12 @@ class ReportController extends Controller
 
     }
 
-    public function adminReport(Request $request)
+    public function adminReport(Request $request): array
     {
         return $this->reportService->adminReportData(date('Y-m-d'));
     }
 
-    public function sellerReport(Request $request)
+    public function sellerReport(Request $request): array
     {
         $reportData = $this->reportService->sellerReportData($request['seller_id'], date('Y-m-d'));
 

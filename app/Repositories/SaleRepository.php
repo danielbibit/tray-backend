@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Sale;
+use Illuminate\Database\Eloquent\Collection;
 
 class SaleRepository
 {
@@ -12,12 +13,12 @@ class SaleRepository
     }
 
 
-    public function getAll()
+    public function getAll() : Collection
     {
         return Sale::all();
     }
 
-    public function getSalesByDate($date)
+    public function getSalesByDate(string $date) : Collection
     {
         return Sale::selectRaw('*')->whereDate('sale_date', $date)->get();
     }
