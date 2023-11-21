@@ -2,10 +2,12 @@
 
 namespace App\Services;
 
+use App\Http\Resources\SaleResource;
 use App\Models\Sale;
 use App\Repositories\SaleRepository;
 use ErrorException;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
 
@@ -18,7 +20,7 @@ class SaleService
         //
     }
 
-    public function create(array $data): Sale
+    public function create(array $data): SaleResource
     {
         Log::debug('Creating sale with data: ' . json_encode($data));
 
@@ -39,11 +41,10 @@ class SaleService
         // Calculate comission
         $data['comission'] = $data['price'] * config('app.comission_percentage');
 
-        return $this->saleRepository->create($data);
+        return new SaleResource($this->saleRepository->create($data));
     }
-
-    public function getAll() : Collection
+    public function getAll() : AnonymousResourceCollection
     {
-        return $this->saleRepository->getAll();
+        return SaleResource::collection($this->saleRepository->getAll());
     }
 }
