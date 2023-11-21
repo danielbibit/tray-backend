@@ -18,7 +18,7 @@ class SellerRepository
         return Seller::all();
     }
 
-    public function getById($id) : Collection
+    public function getById($id) : Seller
     {
         return Seller::find($id);
     }

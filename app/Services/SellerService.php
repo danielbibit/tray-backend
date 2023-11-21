@@ -2,10 +2,12 @@
 
 namespace App\Services;
 
+use App\Http\Resources\SellerResource;
 use App\Models\Seller;
 use App\Repositories\SellerRepository;
 use ErrorException;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Log;
 
@@ -18,7 +20,7 @@ class SellerService
         //
     }
 
-    public function create(array $data): Seller
+    public function create(array $data): SellerResource
     {
         $validationRules = [
             'name' => 'required|string|min:3|max:50',
@@ -33,17 +35,17 @@ class SellerService
             throw new ErrorException($errorMessage);
         }
 
-        return $this->sellerRespository->create($data);
+        return new SellerResource($this->sellerRespository->create($data));
     }
 
-    public function getAll() : Collection
+    public function getAll() : AnonymousResourceCollection
     {
-        return $this->sellerRespository->getAll();
+        return SellerResource::collection($this->sellerRespository->getAll());
     }
 
-    public function getById(int $id) : Collection
+    public function getById(int $id) : SellerResource
     {
-        return $this->sellerRespository->getById($id);
+        return new SellerResource($this->sellerRespository->getById($id));
     }
 
     public function getSales(int $id) : Collection
