@@ -28,8 +28,6 @@ class SellerServiceTest extends TestCase
         }catch( \ErrorException $e) {
             $this->assertEquals('The email field must be a valid email address.', $e->getMessage());
         }
-
-
     }
 
     public function test_seller_name_validation(): void
@@ -51,7 +49,5 @@ class SellerServiceTest extends TestCase
         }catch( \ErrorException $e) {
             $this->assertEquals('The name field must be at least 3 characters.', $e->getMessage());
         }
-
-
     }
 }
