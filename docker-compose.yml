@@ -15,17 +15,30 @@ services:
       - 3306:3306
     restart: unless-stopped
 
+  nginx:
+    image: nginx
+    container_name: nginx
+    restart: always
+    volumes:
+      - .:/var/www
+      - ./nginx:/etc/nginx/conf.d
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - tray_dev
+
   api:
+    container_name: api
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: tray_api
-    depends_on:
-      - mysql
+    expose:
+      - "9000"
+    volumes:
+      - .:/var/www
     networks:
       - tray_dev
-    ports:
-      - 8000:8000
     restart: unless-stopped
 
   ui:
